@@ -25,7 +25,12 @@
 			<form action="guardarPalabra.php" method="POST" enctype="multipart/form-data">
 
 				<input placeholder="Palabra Español" name="palabraEsp" required>
-				<input placeholder="Palabra Cochimie" name="palabraCochimie" required>
+				<input placeholder="Palabra lengua indígena" name="palabra" required>
+				<select name="idioma" required>
+					<option value="cochimi">Cochimí</option>
+				  	<option value="guaycura">Guaycura</option>
+				  	<option value="pericu">Pericú</option>
+				</select>
 				<input type="file" name="imagen">
 
 	  			

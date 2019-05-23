@@ -5,7 +5,7 @@
 
 	$txtID=(isset($_POST['txtID']))?$_POST['txtID']:"";
 	$txtPalabraEsp=(isset($_POST['txtPalabraEsp']))?$_POST['txtPalabraEsp']:"";
-	$txtPalabraCochimie=(isset($_POST['txtPalabraCochimie']))?$_POST['txtPalabraCochimie']:"";
+	$txtPalabra=(isset($_POST['txtPalabra']))?$_POST['txtPalabra']:"";
 
 ?>
 
@@ -45,7 +45,7 @@
 				
 
 				<label for="">Palabra Cochimie:</label>
-				<input type="text" name="txtPalabraCochimie" value="<?php echo$txtPalabraCochimie ?>" placeholder="" id="txtPalabraCochimie" required="">
+				<input type="text" name="txtPalabra" value="<?php echo$txtPalabra ?>" placeholder="" id="txtPalabra" required="">
 				
 						
 				
@@ -81,7 +81,7 @@
 			<?php foreach ($listaPalabras as $palabra) { ?>
 				<tr>
 					<td><?php echo $palabra['palabraEsp'] ?></td>
-					<td><?php echo $palabra['palabraCochimie'] ?></td>
+					<td><?php echo $palabra['palabra'] ?></td>
 					<td><img src="img/diccionario/<?php echo $palabra['imagen'] ?>"></td>
 
 					
@@ -93,7 +93,7 @@
 
 						<input type="hidden" name="txtID" value="<?php echo $palabra['idDiccionario']; ?>">
 						<input type="hidden" name="txtPalabraEsp" value="<?php echo $palabra['palabraEsp']; ?>">
-						<input type="hidden" name="txtPalabraCochimie" value="<?php echo $palabra['palabraCochimie']; ?>">
+						<input type="hidden" name="txtPalabra" value="<?php echo $palabra['palabra']; ?>">
 						
 						<input type="submit" value="Seleccionar" name="accion">
 						

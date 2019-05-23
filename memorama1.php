@@ -69,7 +69,7 @@ $base=conectar();
 						</div>
 
 						<div class="palabraMemo"><?php echo $carta['palabraEsp'] ?></div>
-						<div class="indigena palabraMemo"><?php echo $carta['palabraCochimie'] ?></div>
+						<div class="indigena palabraMemo"><?php echo $carta['palabra'] ?></div>
 						
 					</div>
 					
@@ -88,7 +88,7 @@ $base=conectar();
 						</div>
 
 						<div class="palabraMemo"><?php echo $carta['palabraEsp'] ?></div>
-						<div class="indigena palabraMemo"><?php echo $carta['palabraCochimie'] ?></div>
+						<div class="indigena palabraMemo"><?php echo $carta['palabra'] ?></div>
 						
 					</div>
 					

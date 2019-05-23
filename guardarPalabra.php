@@ -1,10 +1,11 @@
 <?php 
 		
-		if (isset($_POST['palabraEsp']) && isset($_POST['palabraCochimie'])){
+		if (isset($_POST['palabraEsp']) && isset($_POST['palabra']) && isset($_POST['idioma'])){
 
 				$imagen = $_POST['imagen'];
 				$palabraEsp = $_POST['palabraEsp'];
-				$palabraCochimie= $_POST['palabraCochimie'];
+				$palabra= $_POST['palabra'];
+				$idioma= $_POST['idioma'];
 
 
 				
@@ -36,10 +37,10 @@
 
 					$base=conectar();
 
-					$query = "INSERT INTO diccionario (imagen,palabraEsp,palabraCochimie) VALUES ('$nombre_imagen',:palabraEsp, :palabraCochimie)";
+					$query = "INSERT INTO diccionario (imagen,palabraEsp,palabra,idioma) VALUES ('$nombre_imagen',:palabraEsp, :palabra, :idioma)";
 					$resultado = $base->prepare($query);
 
-			    	$resultado->execute(array(":palabraEsp"=>$palabraEsp, ":palabraCochimie"=>$palabraCochimie,));
+			    	$resultado->execute(array(":palabraEsp"=>$palabraEsp, ":palabra"=>$palabra, ":idioma"=>$idioma));
 
 			    	$resultado->closeCursor();
 				    //En caso de que no ocurra un error redirecciona al login del instagram para que inicie sesion

@@ -19,7 +19,7 @@ $base=conectar();
 
 		<?php include("estructura/menu.php"); ?>
 
-		<h2>Diccionario Cochimí</h2>
+		<h2>Diccionario Guaycura</h2>
 
 		<div class="diccionario">
 
@@ -27,7 +27,7 @@ $base=conectar();
 			<?php 
 		
 
-			$sentencia = $base->prepare("select * from diccionario where idioma='cochimi' order by palabraEsp asc;");
+			$sentencia = $base->prepare("select * from diccionario where idioma='guaycura' order by palabraEsp asc;");
 			$sentencia -> execute();
 			$listaPalabras = $sentencia-> fetchAll(PDO::FETCH_ASSOC);
 			

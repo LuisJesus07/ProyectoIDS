@@ -21,7 +21,7 @@
 		<h2>Diccionario</h2>
 
 
-		<a href="diccionario.php"><div class="puntos cuestionario menu-guaycuras">
+		<a href="diccionarioGuaycura.php"><div class="puntos cuestionario menu-guaycuras">
 
 			<h3>Guaycuras</h3>
 
@@ -31,16 +31,16 @@
 
 		<a href="diccionario.php"><div class="puntos cuestionario menu-cochimies">
 
-			<h3>Cochimies</h3>
+			<h3>Cochimíes</h3>
 
 			<img src="img/cochimies.png">
 
 		</div> </a>
 
 		
-		<a href="diccionario.php"><div class="puntos cuestionario menu-pericues">
+		<a href="diccionarioPericu.php"><div class="puntos cuestionario menu-pericues">
 
-			<h3>Pericues</h3>
+			<h3>Pericúes</h3>
 
 			<img src="img/pericues.png">
 
