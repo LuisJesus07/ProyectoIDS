@@ -154,8 +154,8 @@
 			contador_m=2;
 		}else{
 			if(nivelBD==10 || nivelBD==11 || nivelBD==12 || nivelBD==13 || nivelBD==14){
-				contador_s=30;
-				contador_m=0;
+				contador_s=0;
+				contador_m=2;
 			}else{
 				if(nivelBD==15 || nivelBD==16 || nivelBD==17 || nivelBD==18 || nivelBD==19){
 					contador_s=45;
@@ -277,7 +277,7 @@
 		if(bloquearPreguntas==false){
 			GetUserName();
 
-			var indice_pregunta= Math.floor(Math.random()*40);
+			var indice_pregunta= Math.floor(Math.random()*103);
 			console.log(indice_pregunta);
 			var indice_imgPregunta = indice_pregunta;
 			var respuestas_posibles = respuestas[indice_pregunta];
