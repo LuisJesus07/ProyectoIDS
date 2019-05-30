@@ -4,11 +4,12 @@
 <body>
 	<?php 
 		session_start();
-		if(!isset($_SESSION['administrador'])){//Si no hay nada almacenado te manda al login 
-			header("location: login.php");
+		if(!isset($_SESSION['usuario'])){//Si no hay nada almacenado te manda al login 
+			header("location: menuJuego.php");
 
 		}
 	 ?>
+	
 
 	<div class="fondoMenu">
 
@@ -74,15 +75,8 @@
 		</div>
 
 
-		<a href="admin.php"><div class="puntos cuestionario admin-menu">
 
-			<h3>Administrador</h3>
-
-			<img src="img/imgAdminMenu.png">
-
-		</div> </a>
-
-		<a href="miCuenta.php"><div class="puntos cuestionario miCuenta-menu">
+		<a href="miCuenta.php"><div class="puntos cuestionario miCuenta-menu miCuenta-index">
 
 			<h3>Mi Cuenta</h3>
 

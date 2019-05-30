@@ -21,7 +21,7 @@
 			if ($numero_registro!=0){//Sirve para saber si hay registros en la BD
 				session_start();//Se inicia la sesion
 				$_SESSION['usuario'] =$_POST['correoE']; //Le pasamos el nombre del usuario ala sesion
-				header("location:menuJuego.php");//Redirigimos la pagina si es que el usuario existe en la BD al inicio
+				header("location:index.php");//Redirigimos la pagina si es que el usuario existe en la BD al inicio
 
 			}else{
 				header("location:loginError.php");//Si no existe lo redirigimos al login de nuevo

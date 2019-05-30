@@ -42,10 +42,14 @@
 					if(!filter_var($nombreCompleto,FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>$soloLetras)))){
 						$errors .='Ingresa un Nombre Valido <br />';
 					}
+					
 
 				}else{
 					$errors .='Ingresa tu Nombre <br />';
-				}
+				} 
+
+			
+				
 
 				// validar el correo
 				if (!empty($correoE)){

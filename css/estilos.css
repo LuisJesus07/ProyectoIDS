@@ -131,6 +131,7 @@ input[type="submit"]:hover{
 .registrar h1 {
 	color: #333;
 	text-shadow:none;
+	font-size: 2.3vw;
 }
 
 .registrar h5{
@@ -390,6 +391,7 @@ input[type="submit"]:hover{
 }
 
 
+
 /* menuJuego */
 
 .fondoMenu h1{
@@ -578,6 +580,13 @@ input[type="submit"]:hover{
 
 .puntuacion-menu h3{
 	margin-right: 25%;
+}
+
+/*index*/
+
+.miCuenta-index {
+	margin-right: 34%;
+
 }
 
 /*menuDiccionario*/
@@ -1292,7 +1301,7 @@ input[type="submit"]:hover{
     width: 490px;
     margin-left: 8%;
     font-size: 30;
-    text-align: -webkit-match-parent;
+    text-align: justify;
     margin-bottom: 25px;
 }
 
