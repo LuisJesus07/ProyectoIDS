@@ -14,7 +14,7 @@
 		<div class="registroOk">
 			<h1>Usuario Eliminado con Exito</h1>
 
-			<a href="admin.php"><input type="button"  value="Aceptar"></a>
+			<a href="eliminar.php"><input type="button"  value="Aceptar"></a>
 		</div>
 
 	</div>

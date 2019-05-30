@@ -48,7 +48,7 @@
 
 
 
-		<a href="menuJuego.php" class="tabla"><button>Volver al Menú</button></a>
+		<a href="index.php" class="tabla"><button>Volver al Menú</button></a>
 
 
 	</div>

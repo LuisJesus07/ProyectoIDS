@@ -68,7 +68,7 @@
 
 			</div>
 
-			<a href="menuJuego.php"><button>Volver al Menú</button></a>
+			<a href="index.php"><button>Volver al Menú</button></a>
 
 
 

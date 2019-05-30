@@ -58,13 +58,13 @@
 
 		<form action="guardarUsuario.php" method="POST" enctype="multipart/form-data">
 
-			<input type="text" required placeholder="Nombre" name="nombreCompleto">
+			<input type="text" required placeholder="Nombre" name="nombreCompleto" value="<?php if(isset($nombreCompleto)) echo $nombreCompleto ?>">
 			<select name="sexo" placeholder="Sexo">
-			  <option value="Hombre">Hombre</option>
-			  <option value="Mujer">Mujer</option>
+			  <option value="Hombre">Masculino</option>
+			  <option value="Mujer">Femenino</option>
 			</select>
-			<input type="number" min="0" required placeholder="Edad" name="edad">
-			<input type="email" required placeholder="Correo Electrónico" name="correoE">
+			<input type="number" min="0" required placeholder="Edad" name="edad" value="<?php if(isset($edad)) echo $edad ?>">
+			<input type="email" required placeholder="Correo Electrónico" name="correoE" value="<?php if(isset($correoE)) echo $correoE ?>">
 			<input type="password" required placeholder="Contraseña" name="password">
 			<input type="password" required placeholder="Repetir contraseña" name="password2">
 			<h5>Foto de Perfil :</h5>

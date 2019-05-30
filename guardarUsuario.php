@@ -4,7 +4,7 @@
 		$base=conectar();
 
 		$errors = '';
-		$soloLetras = '/[a-zA-Z\s]/';
+		$soloLetras = '/^[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)*$/';
 		
 		if (isset($_POST['nombreCompleto']) && isset($_POST['correoE']) && isset($_POST['edad']) && isset($_POST['sexo']) && isset($_POST['password']) && isset($_POST['password2'])){
 
@@ -12,7 +12,6 @@
 				$correoE = $_POST['correoE'];
 				$edad= $_POST['edad'];
 				$sexo = $_POST['sexo'];
-				$imagen = $_POST['imagen'];
 				//Nunca almacenar las contraseñas en texto plano. No utilizar MD5 ni SHA1
 				$password = $_POST['password'];
 				$password2 = $_POST['password2'];
@@ -30,27 +29,37 @@
 					$nombre_imagen='imgDefMuj.png';
 				}
 
-				// validar que las contraseñas sean iguales
+				// validar que las contraseñas 
 				if($password != $password2){
 					$errors .='Las contraseñas no coinciden <br />';
+				}else{
+
+					if(strlen($password)>=18){
+						$errors .='Contraseña demasiado larga <br />';
+					}
 				}
 
-				// validar nombre
+		
+				//validar el nombre
 				if(!empty($nombreCompleto)){
-					$nombreCompleto = trim($nombreCompleto);
-					$nombreCompleto = filter_var($nombreCompleto, FILTER_SANITIZE_STRING);
-					if(!filter_var($nombreCompleto,FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>$soloLetras)))){
-						$errors .='Ingresa un Nombre Valido <br />';
+
+					if(strlen($nombreCompleto)<=30){
+
+						if(preg_match($soloLetras, $nombreCompleto)){
+							$nombreCompleto = trim($nombreCompleto);
+						}else{
+							$errors .='Ingresa un Nombre Valido <br />';
+						}
+
+					}else{
+						$errors .='Nombre demasiado largo <br />';
 					}
-					
 
 				}else{
-					$errors .='Ingresa tu Nombre <br />';
-				} 
+					$errors .='Ingresa un Nombre<br />';
+				}
 
-			
 				
-
 				// validar el correo
 				if (!empty($correoE)){
 					$correoE = filter_var($correoE, FILTER_SANITIZE_EMAIL);
@@ -76,28 +85,26 @@
 				}
 
 
-				// evalua si hay una imagen
-				
-
-					if ($tam_imagen<=5000000) {//Si excede los tres megas no te deja subir la foto
-						if ($tipo_imagen=="image/jpeg"||$tipo_imagen=="image/jpg"||$tipo_imagen=="image/png"||$tipo_imagen=="image/gif" || $tipo_imagen== null){
-							//RUTA DE LA CARPETA DESTINO EN EL SERVIDOR:
-							$carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/Proyecto vocablos/img/fotoPerfil/';
+				// evalua el tamaño y formato de la img
+				if ($tam_imagen<=5000000) {//Si excede los tres megas no te deja subir la foto
+					if ($tipo_imagen=="image/jpeg"||$tipo_imagen=="image/jpg"||$tipo_imagen=="image/png"||$tipo_imagen=="image/gif"|| $tipo_imagen== null){
+						//RUTA DE LA CARPETA DESTINO EN EL SERVIDOR:
+						$carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/Proyecto vocablos/img/fotoPerfil/';
 							
-							if(!$errors){
-								//MOVEMOS LA IMAGEN DEL DIRECTORIO TEMPORAL AL DIRECTORIO ESCOGIDO:
-								move_uploaded_file($_FILES['imagen']['tmp_name'],$carpeta_destino.$nombre_imagen);
-							}
+						if(!$errors){
+							//MOVEMOS LA IMAGEN DEL DIRECTORIO TEMPORAL AL DIRECTORIO ESCOGIDO:
+							move_uploaded_file($_FILES['imagen']['tmp_name'],$carpeta_destino.$nombre_imagen);
+						}
 							
 							
 						}else{
 							$errors .='La imagen no es valida <br />';
 
 						}
-					}else{
-						$errors .='El tamaño es demaciado grande <br />';
+				}else{
+					$errors .='El tamaño es demaciado grande <br />';
 
-					}
+				}
 
 				
 
@@ -105,6 +112,10 @@
 				if(!empty($edad)){
 					if(!is_numeric($edad)){
 						$errors .='Ingresa una edad valida<br />';
+					}else{
+						if($edad<3 || $edad>100){
+							$errors .='Ingrese una edad valida<br />';
+						}
 					}
 				}else{
 					$errors .='Ingresa tu Edad <br />';
@@ -116,7 +127,11 @@
 				if(!$errors){
 					$last_id="";
 					try{
+
+						//enviar correo
+						mail($correoE, "Vocablos Indígenas", "Te has registrado a Vocablos Indígenas con exito");
 						
+						//insertar al usuario en la base de datos
 						$query = "INSERT INTO usuario (nombreCompleto,correoE,edad,sexo,password,fotoPerfil) VALUES (:nombreCompleto, :correoE, :edad, :sexo, :password, '$nombre_imagen')";
 						$resultado = $base->prepare($query);
 
