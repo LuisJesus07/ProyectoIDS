@@ -160,7 +160,7 @@
 
 		session_start();
 		if(!isset($_SESSION['administrador'])){//Si no hay nada almacenado te manda al login 
-			require 'login.php';
+			require 'loginError_view.php';
 
 		}else{
 			require 'adminUsuario.php';

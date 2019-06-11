@@ -149,19 +149,19 @@
 			contador_m=2;
 		}
 
-		if(nivelBD==5 || nivelBD==6 || nivelBD==7 || nivelBD==8 || nivelBD==9){
+		if(nivelBD>=5 && nivelBD<=9){
 			contador_s=15;
 			contador_m=2;
 		}else{
-			if(nivelBD==10 || nivelBD==11 || nivelBD==12 || nivelBD==13 || nivelBD==14){
+			if(nivelBD>=10 && nivelBD<=14){
 				contador_s=0;
 				contador_m=2;
 			}else{
-				if(nivelBD==15 || nivelBD==16 || nivelBD==17 || nivelBD==18 || nivelBD==19){
+				if(nivelBD>=15 && nivelBD<=19){
 					contador_s=45;
 					contador_m=1;
 				}else{
-					if (nivelBD==20 || nivelBD==21 || nivelBD==22 || nivelBD==23 || nivelBD==24) {
+					if (nivelBD>=20 && nivelBD<=24) {
 						contador_s=30;
 						contador_m=1;
 					}else{
@@ -278,7 +278,6 @@
 			GetUserName();
 
 			var indice_pregunta= Math.floor(Math.random()*103);
-			console.log(indice_pregunta);
 			var indice_imgPregunta = indice_pregunta;
 			var respuestas_posibles = respuestas[indice_pregunta];
 
@@ -334,7 +333,7 @@
 
 				if(bloquearPreguntas==false){
 
-					var respuesta = $("input[type=radio]:checked").val();
+				var respuesta = $("input[type=radio]:checked").val();
 
 				if (respuesta == null) {
 					//alert("Seleccione una opcion");
@@ -377,9 +376,6 @@
 							
 						}
 
-
-						
-						
 
 						/* muestra la imagen de ganador*/
 						var ganaste='<img src="img/juego/ganaste.png">';

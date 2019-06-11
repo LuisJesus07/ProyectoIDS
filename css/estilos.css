@@ -394,6 +394,8 @@ input[type="submit"]:hover{
 
 /* menuJuego */
 
+
+
 .fondoMenu h1{
 	margin-top: -6%;
 	font-family: Akronim;
@@ -1602,9 +1604,17 @@ input[type="submit"]:hover{
 		margin-right: 20%;
 	}
 
-	
+	.cuestionario{
+		width: 30%;
+		height: 350px;
+	}
 
-	/* puntuacion */
+	.memorama-menu{
+		width: 30%;
+		height: 350px;
+	}
+
+	/* puntuacion  */
 	.puntos{
 		width: 65%;
 		margin-left: 18%;
@@ -1862,7 +1872,7 @@ input[type="submit"]:hover{
 	}
 
 	.iniciar{
-		display: none;
+		
 		width: 50%;
     	margin-bottom: 50px;
     	order: 4;
@@ -1950,34 +1960,82 @@ input[type="submit"]:hover{
 
 @media screen and (max-width: 360px){
 
+	/* menuDiccionario */
+	.menu-guaycuras{
+		float: none;
+		height: 230px;
+		margin-bottom: 20px;
+	}
+
+	.menu-guaycuras h3{
+		font-size: 25px;
+		margin-top: 10px;
+	}
+
+	.menu-cochimies{
+		float: none;
+		height: 230px;
+		margin-bottom: 20px;
+	}
+
+	.menu-cochimies h3{
+		font-size: 25px;
+		margin-top: 10px;
+	}
+
+	.menu-pericues{
+		float: none;
+		height: 230px;
+	}
+
+	.menu-pericues h3{
+		font-size: 25px;
+		margin-top: 10px;
+	}
+
+
+
 	/* index */
 
-	.juegos{
-		width: 360px;
+	.fondoMenu h1{
+		font-size: 1.5em;
+    	margin-bottom: 10%;
 	}
 
-	.juegos h2{
-		font-size: 28px;
+	.logo img{
+		width: 100px;
+    	margin-right: 20px;
 	}
 
-	.seccion{
-		margin-left: 50px;
-		height: 460px;
-		width: 270px;
+	/* miCuenta */
+
+	.cuenta{
+		height: 410px;
 	}
 
-	.seccion p{
-		width: 200px;
-		margin-left: 35px;
+	.fotoPerfil{
+		height: 152px;
+	    width: 152px;
+	    margin-left: 23%
 	}
 
-	.seccion button{
-		float: none;
-		margin-right: 0px;
+	.fotoPerfil img{
+	    height: 140px;
+	    width: 120px;
 	}
 
-	.seccion3{
-		margin-left: 50px;
+	.miCuenta-resp h5{
+		margin-top: 35px;
+		font-size: 15px;
+		width: 100px;
+	}
+
+
+	.miCuenta-resp-2 h4{
+		margin-top: 35px;
+		font-size: 15px;
+		width: 100px;
+
 	}
 
 	/* juego */
@@ -2082,14 +2140,17 @@ input[type="submit"]:hover{
 		font-size: 25px;
 	}
 
-	.logo img{
 
-    	width: 60px;
-    	margin-right: 80px;
-
-	}
 
 	/* puntuacion */
+
+	.main-menu{
+
+	    margin-top: -60;
+	    margin-top: -40px;
+	    margin-bottom: 10px;
+
+	}
 
 	.tabla{
 		width: 135%;
@@ -2097,7 +2158,8 @@ input[type="submit"]:hover{
 	}
 
 	.tabla button{
-		margin-left: 20px;
+		margin-left: 0px;
+		margin-top: 40px;
 	}
 
 }

@@ -46,11 +46,11 @@
 	</div>
 
 
-	<div class="oscurecer" id="oscurecer"></div>
+	<div class="oscurecer" id="oscurecer" style="display: block;"></div>
 
-	<div class="registrar" id="registrar">
+	<div class="registrar" id="registrar" style="display: block;">
 
-	<div class="cerrarRegistro" id="cerrarRegistro">
+	<div class="cerrarRegistro" id="cerrarRegistro" onclick="desapareceFormulario()">
 		<img src="img/cerrar.png">
 	</div>
 
@@ -58,19 +58,25 @@
 
 		<form action="guardarUsuario.php" method="POST" enctype="multipart/form-data">
 
-			<input type="text" required placeholder="Nombre" name="nombreCompleto">
+			<input type="text" required placeholder="Nombre" name="nombreCompleto" value="<?php if(isset($nombreCompleto)) echo $nombreCompleto ?>">
 			<select name="sexo" placeholder="Sexo">
 			  <option value="Hombre">Masculino</option>
 			  <option value="Mujer">Femenino</option>
 			</select>
-			<input type="number" min="0" required placeholder="Edad" name="edad">
-			<input type="email" required placeholder="Correo Electrónico" name="correoE" >
+			<input type="number" min="0" required placeholder="Edad" name="edad" value="<?php if(isset($edad)) echo $edad ?>">
+			<input type="email" required placeholder="Correo Electrónico" name="correoE" value="<?php if(isset($correoE)) echo $correoE ?>">
 			<input type="password" required placeholder="Contraseña" name="password">
 			<input type="password" required placeholder="Repetir contraseña" name="password2">
 			<h5>Foto de Perfil :</h5>
 			<div class="select-foto">
 				<input type="file" name="imagen" placeholder="Imagen Perfil">
 			</div>
+
+			<?php if(!empty($errors)): ?>
+				<div class="alert-error">
+					<?php echo $errors ?>
+				</div>
+			<?php endif ?>
 
 			<input type="submit" value="Crear" >
 		</form>
